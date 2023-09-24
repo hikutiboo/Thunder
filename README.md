@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Here is my first working version of Thunder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Thunder - is a pretty simple rework of Instagram, it has no database, but can save current data, becouse of redux and react-router 
+implemented here.
 
-## Available Scripts
+## Pages of this project
 
-In the project directory, you can run:
+On Thunder you can find:
 
-### `npm start`
+### `Register page`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Simple registration page, user ID, password, nickname and profile photo - all, what is necessary to small apps.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Log in page`
 
-### `npm test`
+Just log in, notting special.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Switch account page`
 
-### `npm run build`
+This is a page, that makes life easier, if you already have logged into account, what is the reason to do it again? So if you did not
+activated full log out you can get back to your account without entering the password.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Profile page`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Note: here is one of not yet finished functions - edit account, it might came up in later editions!**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Profile page can have three states: 
 
-### `npm run eject`
+#### Acoount not found
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This means that you trying to got to unknow user account
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Other user account
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In this case you have default functional of profile page - you can see this user's data, subscribe button and all his posts. Click on post
+will allow you to see the full version of it, read the description, read, write and like existing comments and, of course, like the post.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### **About the posts - you can currently create only one-pictured post, that contain only photos, not a videos, but it would change later**
 
-## Learn More
+#### Your account
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+On your account page we have some changes:
+- "New post" instead of subscribe button,
+- edit account button, that is not finished yet;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Home page`
 
-### Code Splitting
+First of sidebar navigation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Here is display of all posts, with full functionality of post, that was described higher.
 
-### Analyzing the Bundle Size
+**Note: if you add post with any other way that is not the "New post" button - you would not see it on home page, becouse posts on home uses different data store with account posts**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `Search page`
 
-### Making a Progressive Web App
+Second sidebar navigation item.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This page contains pretty simple, but required functionality for resoures like that - search. For now you can find only account, but it might contain posts searching by hashtags later. So, about current version you can find anyone by user ID or nickname, as you would preffer to.
 
-### Advanced Configuration
+### `Messages page`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Third of sidebar navigation.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The last one page of available now, and, unfortunately, not done. I mean the page by itself is ready to use and can do everything that should, problem is that there is no any logic on resourse to create that messages, and they realization is pretty bad, becouse they contain too little information, so they are useless, but this is one of the first in list of changes in next versions!

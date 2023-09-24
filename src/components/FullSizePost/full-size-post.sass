@@ -1,0 +1,60 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_bg_color: techno_theme.$main_techno_color
+$additional_color: techno_theme.$first_additional_techno_color
+
+.full-size-post
+    width: 80%
+    min-width: 500px
+    background-color: darken($main_bg_color, 2%)
+    border-radius: 10px
+    padding: 15px
+    display: grid
+    grid-template-columns: 5fr 4fr
+    gap: 20px
+    position: relative
+
+    .remove-post
+        position: absolute
+        right: 20px
+        top: 15px
+        font-size: 26px
+        cursor: pointer
+        transition: all .3s ease
+
+        &:hover
+            color: red
+
+        &:active
+            transform: scale(1.15)
+
+    .account-card
+        display: flex
+        gap: 10px
+        grid-column: span 2
+
+        .usernames-set
+            display: flex
+            flex-direction: column
+            gap: 5px
+
+            .nickname
+                font-size: 20px
+                color: #fff
+
+            .user-id
+                font-size: 12px
+
+    .image-container
+        height: 450px
+        background-color: rgba(255, 255, 255, 0.05)
+        border-radius: 5px
+
+        .post-image
+            height: 100%
+            object-fit: contain
+
+    .comments-section
+        width: 100%
+        background-color: lighten($main_bg_color, 5%)
+        border-radius: 5px

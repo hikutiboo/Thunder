@@ -1,0 +1,91 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$first_text_color: techno_theme.$first_additional_techno_color
+$second_text_color: techno_theme.$secondary_additional_techno_color
+$description_main_color: techno_theme.$main_techno_text_color
+$description_secondary_color: techno_theme.$secondary_techno_text_color
+
+.comments-section
+    position: relative
+
+    .post-description
+        width: 100%
+        color: $description_main_color
+        border-bottom: 1px solid $description_secondary_color
+        padding: 10px
+        padding-top: 0
+
+    .coments-container
+        padding: 10px
+        display: flex
+        flex-direction: column
+        gap: 20px
+        height: 350px
+        overflow-y: scroll
+
+        .no-comments
+            text-align: center
+            font-size: 20px
+            color: $first_text_color
+            color: $second_text_color
+
+    ::-webkit-scrollbar
+        background: transparent
+        width: 0
+
+    .comments-header
+        width: 100%
+        padding: 5px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 20px
+        color: $first_text_color
+        border-bottom: 1px solid $first_text_color
+
+    .comment-like-section
+        color: $first_text_color
+        width: 100%
+        display: flex
+
+        &-button
+            display: flex
+            align-items: center
+            flex-direction: column
+            gap: 5px
+            padding: 10px 30px
+            background: transparent
+            border: 3px solid 
+            border-radius: 15px
+            font-weight: 500
+            cursor: pointer
+            transition: all .3s ease-in-out 
+
+        .post-like-button
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+            border-right: 0
+            border-color: $first_text_color
+
+            &:hover
+                background-color: rgba($first_text_color, .1)
+
+        .create-comment-button
+            border-top-left-radius: 0
+            border-bottom-left-radius: 0
+            border-left: 0
+            color: $second_text_color
+            border-color: $second_text_color
+
+            &:hover
+                background-color: rgba($second_text_color, .1)
+
+        .create-comment-input
+            width: 100%
+            background: transparent
+            color: #fff
+            border: 0
+            border-top: 3px solid $second_text_color
+            border-bottom: 3px solid $first_text_color
+            font-size: 18px
+            padding: 0px 10px

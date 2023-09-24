@@ -1,0 +1,29 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$first_color: techno_theme.$first_additional_techno_color
+$second_color: techno_theme.$secondary_additional_techno_color
+
+.MuiStack-root.switch-register-buttons
+    flex-direction: row
+    align-items: center
+    gap: 10px
+    color: #fff
+
+    & .choose-item
+        border: 2px solid black
+        border-radius: 10px
+        padding: 10px 15px
+
+    & .switch-button
+        color: $second_color
+        border-color: $second_color
+
+        &:hover
+            background-color: rgba($second_color, .2)
+
+    & .register-button
+        color: $first_color
+        border-color: $first_color
+
+        &:hover
+            background-color: rgba($first_color, .2)

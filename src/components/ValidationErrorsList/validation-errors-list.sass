@@ -1,0 +1,23 @@
+$error_bg_color: rgb(43, 24, 26)
+$error_header_color: rgb(232, 59, 70)
+$error_text_color: rgb(252, 207, 207)
+
+.errors-container
+    font-size: 18px
+    background-color: $error_bg_color
+    padding: 10px 15px
+    border-radius: 10px
+
+    .validation-errors-list
+        display: flex
+        flex-direction: column
+        gap: 5px
+        padding: 10px 0
+
+        &-header
+            text-transform: uppercase
+            color: lighten($error_header_color, 5%)
+
+        &-item
+            margin-left: 20px
+            color: $error_text_color

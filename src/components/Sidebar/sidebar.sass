@@ -1,0 +1,47 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_color: techno_theme.$main_techno_color
+$second_additional_color: techno_theme.$first_additional_techno_color
+$main_text_color: techno_theme.$main_techno_text_color
+$secondary_text_color: techno_theme.$secondary_techno_text_color
+$header_text_color: techno_theme.$header_techno_text_color
+$main_logo_color: gold
+
+@mixin logo()
+
+.sidebar
+    display: grid
+    grid-template: 4fr repeat(4, 2fr) / 1fr
+    align-items: start
+    align-content: start
+    justify-items: center
+    font-size: 24px
+
+    & .sidebar-item
+        color: $second_additional_color
+        display: flex
+        gap: 5px
+
+    & .thunder-logo
+        border-radius: 20px
+        padding: 15px 20px
+        background-color: hsla(210, 79%, 46%, 0.04)
+        color: $main_logo_color
+
+    & a.active
+        border-radius: 15px
+        padding: 5px 10px
+        background-color: hsla(210, 79%, 46%, 0.04)
+    
+    & .messages-logo-item-conatiner
+        position: relative
+    
+    & .unread-count 
+        font-weight: 700
+        color: $main_color
+        position: absolute
+        left: 50%
+        top: 40%
+        transform: translate(-50%, -50%)
+
+    

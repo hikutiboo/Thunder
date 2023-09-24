@@ -1,0 +1,46 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_color: techno_theme.$main_techno_color
+$secondary_color: techno_theme.$firstly_techno_color
+$first_addititonal_color: techno_theme.$secondary_additional_techno_color
+$second_additional_color: techno_theme.$first_additional_techno_color
+$third_additional_color: techno_theme.$thirdly_additional_techno_color
+$main_text_color: techno_theme.$main_techno_text_color
+$secondary_text_color: techno_theme.$secondary_techno_text_color
+$header_text_color: techno_theme.$header_techno_text_color
+
+.MuiPaper-root.account-card
+    padding: 10px 15px
+    background-color: $secondary_color
+    border-radius: 15px
+
+    & .choose-button
+        color: $third_additional_color
+        border: 2px solid $third_additional_color
+        filter: drop-shadow(0 0 5px $main_color)
+        border-radius: 15px
+
+        &:hover
+            background-color: rgba($third_additional_color, .1)
+
+    & .account-names
+        cursor: pointer
+        gap: 10px
+
+        & .nickname
+            color: $main_text_color
+            font-size: 18px
+
+        & .user-id
+            font-size: 13px
+
+        & .logged-state
+            font-size: 14px
+            width: 100%
+            color: $first_addititonal_color
+            font-weight: 400
+            letter-spacing: 1px
+            padding: 3px 5px
+            border: 2px solid $first_addititonal_color
+            border-radius: 10px
+            filter: drop-shadow(0 0 3px $main_color)

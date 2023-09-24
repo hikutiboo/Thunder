@@ -1,0 +1,45 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_bg_color: techno_theme.$main_techno_color
+$additiona_color: techno_theme.$first_additional_techno_color
+
+.post
+    &-container
+        width: 230px
+        height: 230px
+        background-color: lighten($main_bg_color, 10%)
+        position: relative
+        cursor: pointer
+
+        &:hover .post-stats
+            display: flex
+
+        & .post-not-found
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+
+    &-image
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    &-stats
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-color: darken(rgba($main_bg_color, .7), 10%)
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        gap: 15px
+        font-size: 22px
+        display: none
+
+        & .post-param
+            display: flex
+            gap: 5px

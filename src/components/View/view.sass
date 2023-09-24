@@ -1,0 +1,79 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_color: techno_theme.$main_techno_color
+$first_additional_color: techno_theme.$first_additional_techno_color
+$secondary_additional_color: techno_theme.$secondary_additional_techno_color
+$main_text_color: techno_theme.$main_techno_text_color
+$secondary_text_color: techno_theme.$secondary_techno_text_color
+$header_text_color: techno_theme.$header_techno_text_color
+
+@mixin default_grid()
+    display: grid
+    grid-template: 80px 1fr / 1fr 5fr
+    grid-template-areas: "sidebar header header" "sidebar content content"
+    color: #fff
+
+.view-container
+    @include default_grid()
+
+    width: 100%
+    min-height: 100vh
+    color: $secondary_text_color
+    background-color: $main_color
+    z-index: 0
+
+    & .content-container
+        grid-area: content
+        padding: 25px 40px
+        // z-index: 2
+
+    & .sidebar
+        background-color: $main_color
+        padding: 20px 15px
+        width: 100%
+        height: 100%
+
+        &-container
+            grid-area: sidebar
+            border-right: 2px solid $first_additional_color
+            width: calc(100% / 6)
+            height: 100vh
+            position: fixed
+            left: 0
+            top: 0
+
+    & .header
+        background-color: $main_color
+        border-bottom: 2px solid $first_additional_color
+        padding: 10px 15px
+        width: 100%
+        height: 100%
+
+        &-container
+            z-index: 9999
+            grid-area: header
+            width: calc(100% / 6 * 5)
+            height: 80px
+            position: fixed
+            right: 0
+            top: 0
+
+.switch-link
+    color: $secondary_additional_color
+    text-decoration: underline
+    font-style: italic
+
+.screen-blocker
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    position: absolute
+    left: 0
+    top: 0
+    background-color: rgba(darken($main_color, .1), .9)
+    z-index: 99999
+    opacity: 0
+    transition: all .4s ease-in-out
+
+    &.visible
+        opacity: 1

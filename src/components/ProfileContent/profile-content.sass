@@ -1,0 +1,98 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_bg_color: techno_theme.$main_techno_color
+$main_text_color: techno_theme.$first_additional_techno_color
+$secondary_text_color: techno_theme.$secondary_additional_techno_color
+$thirdly_text_color: techno_theme.$secondary_techno_text_color
+$fourthly_text_color: techno_theme.$thirdly_additional_techno_color
+
+.profile
+    &-data
+        display: flex
+        padding-bottom: 45px
+
+        &-id-picture
+            width: 240px
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 20px
+            color: $main_text_color
+
+        .MuiAvatar-root.profile-data-picture
+            width: 160px
+            height: 160px
+            border-radius: 50%
+
+        &-info
+            display: flex
+            flex-direction: column
+            gap: 20px
+            padding: 10px 0
+
+            &-first-line
+                display: flex
+                align-items: center
+                gap: 15px
+                font-size: 26px
+
+                .account-actions
+                    display: flex
+                    gap: 15px
+
+                    .edit-profile-button
+                        color: inherit
+                        font-size: 25px
+                        text-transform: unset
+                        padding: 5px 10px
+                        line-height: unset
+                        font-weight: unset
+                        vertical-align: unset
+                        color: $main_bg_color
+                        background-color: $main_text_color
+
+                        &:hover
+                            background-color: rgba($main_text_color, .6)
+
+                    .changeable-action-profile-button
+                        color: inherit
+                        font-size: 25px
+                        text-transform: unset
+                        padding: 5px 10px
+                        line-height: unset
+                        font-weight: unset
+                        vertical-align: unset
+                        color: $main_bg_color
+                        background-color: $secondary_text_color
+
+                        &.subscribed
+                            background-color: $thirdly_text_color
+
+                            &:hover
+                                background-color: rgba($thirdly_text_color, .6)
+
+                        &:hover
+                            background-color: rgba($secondary_text_color, .6)
+
+            .account-stats
+                display: flex
+                gap: 20px
+
+    .barier-line
+        width: 100%
+        height: 5px
+        background-color: $main_text_color
+        border: 0
+
+    .posts-container
+        padding: 15px 10px
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        justify-content: space-between
+
+        .no-posts
+            text-align: center
+            font-size: 24px
+            color: $fourthly_text_color
+            grid-column: 1 / -1
+            padding: 20px

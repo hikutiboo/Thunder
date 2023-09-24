@@ -1,0 +1,72 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_color: techno_theme.$main_techno_color
+$second_additional_color: techno_theme.$first_additional_techno_color
+$main_text_color: techno_theme.$main_techno_text_color
+$secondary_text_color: techno_theme.$secondary_techno_text_color
+$header_text_color: techno_theme.$header_techno_text_color
+
+.MuiStack-root.account-container
+    flex-direction: row
+    align-items: center
+    gap: 15px
+    position: relative
+    cursor: pointer
+
+    & .MuiPaper-root
+        min-width: 100%
+        padding: 10px 15px
+        transition: all .3s ease !important
+
+    & .account-menu
+        display: flex
+        flex-direction: column
+        gap: 10px
+        position: absolute
+        text-align: right
+        right: 0
+        top: calc(100% + 15px)
+        z-index: 999
+
+        &.closed
+            min-width: 0
+            padding: 0
+            opacity: 0
+            display: none
+
+        &-item
+            padding: 5px 10px
+            border-radius: 5px
+            transition: all .3s ease
+            white-space: nowrap
+            text-transform: unset
+            color: initial
+
+            &.profile-item
+                background-color: hsla(200, 100, 50, .25)
+
+                &:hover
+                    background-color: hsla(200, 100, 50, .5)
+
+                &:active
+                    background-color: hsla(200, 100, 50, 1)
+
+            &.log-out-item
+                background-color: hsla(20, 100, 50, .25)
+
+                &:hover
+                    background-color: hsla(20, 100, 50, .5)
+
+                &:active
+                    background-color: hsla(20, 100, 50, 1)
+
+    & .account-names
+        cursor: pointer
+        gap: 5px
+
+        & .nickname
+            color: $main_text_color
+            font-size: 20px
+
+        & .user-id
+            font-size: 12px

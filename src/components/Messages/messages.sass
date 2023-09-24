@@ -1,0 +1,33 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$error_text_color: techno_theme.$fourthly_additional_techno_color
+$first_header_color: techno_theme.$secondary_additional_techno_color
+
+.not-logged-user
+    font-size: 26px
+    text-align: center
+    color: $error_text_color
+
+.messsages
+    &-container
+        display: flex
+        flex-direction: column
+        gap: 30px
+        
+    &-header-set
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .clear-messages
+            color: $error_text_color
+            cursor: pointer
+            padding: 5px 10px
+            transition: all .3s ease
+            border-radius: 5px
+
+            &:hover
+                background-color: rgba($error_text_color, .2)
+    
+    &-header
+        color: $first_header_color

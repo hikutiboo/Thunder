@@ -1,0 +1,50 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$deletion_color: techno_theme.$fourthly_additional_techno_color
+
+.comment
+    &-item
+        display: grid
+        grid-template: repeat(2, auto) / repeat(3, auto)
+        justify-content: start
+        align-content: start
+        align-items: start
+        gap: 5px 10px
+
+        .usernames-set
+            .nickname
+                font-size: 14px !important
+                letter-spacing: 1.05px
+                font-weight: 500
+
+        .account-card
+            grid-column: unset
+            width: fit-content
+
+        .commentator-avatar-container
+            grid-row: 1 / -1
+            padding-top: 5px
+
+        .commentator-avatar
+            width: 30px
+            height: 30px
+
+        .comment-actions
+            grid-row: span 2
+            align-self: center
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 10px
+
+            .remove-comment-icon:hover
+                color: $deletion_color
+
+        .comment-likes-container
+            display: flex
+            flex-direction: column
+            gap: 5px
+            align-items: center
+
+        .comment-content
+            font-size: 13px

@@ -1,0 +1,37 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$firstly_color: techno_theme.$secondary_techno_text_color
+$secondary_color: techno_theme.$thirdly_additional_techno_color
+
+
+.search-result-item
+    &-container
+        width: 100%
+        border: 1px solid $firstly_color
+        border-width: 1px 0
+        padding: 15px 20px
+        display: flex
+        gap: 25px
+        align-items: center
+
+        .account-card
+            display: flex
+            gap: 10px
+            grid-column: span 2
+
+            .usernames-set
+                display: flex
+                flex-direction: column
+                gap: 5px
+
+                .nickname
+                    font-size: 20px
+                    color: #fff
+
+                .user-id
+                    font-size: 12px
+        
+        .user-data
+            display: flex
+            gap: 15px
+            color: $secondary_color

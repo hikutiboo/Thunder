@@ -1,0 +1,88 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_bg_color: techno_theme.$thirdly_additional_techno_color
+$main_text_color: techno_theme.$main_techno_text_color
+$secondary_text_color: techno_theme.$first_additional_techno_color
+$thirdly_text_color: techno_theme.$thirdly_additional_techno_color
+
+
+.new-post
+    &-container.screen-blocker
+        height: unset
+    
+    &-container
+        display: flex
+        justify-content: center
+        color: $main_text_color
+
+        .exit-post
+            position: absolute
+            right: 20px
+            top: 20px
+            font-size: 32px
+
+    &-creation
+        width: 70%
+        margin: 30px 0
+        padding: 20px 20px
+        border-radius: 30px
+        background-color: rgba(darken($main_bg_color, 10%), .6)
+        display: flex
+        justify-content: center
+
+        .form-items-container
+            display: flex
+            flex-direction: column
+            gap: 30px
+            width: 70%
+
+            .new-post-submit-button
+                color: $secondary_text_color
+                font-size: 20px
+
+                &:hover
+                    background-color: rgba($secondary_text_color, .2)
+
+            .images-preview
+                display: flex
+                justify-content: space-evenly
+
+                .post-preview
+                    display: flex
+                    flex-direction: column
+                    gap: 10px
+
+                .post-preview-image
+                    width: 100%
+                    height: 100%
+
+                    &.small-post-preview-image
+                        object-fit: cover
+
+                    &.full-post-preview-image
+                        object-fit: contain
+
+
+                    &-container
+                        width: 300px
+                        height: 300px
+                        background-color: #00000060
+
+    &-form-label
+        font-size: 20px
+
+    &-form-segment
+        display: flex
+        flex-direction: column
+        gap: 15px
+
+        .description-input
+            width: 600px
+            height: 100px
+            background: transparent
+            color: #fff
+            font-size: 18px
+            padding: 10px 15px
+            border: 3px solid lighten($thirdly_text_color, 20%)
+            border-radius: 15px
+            resize: none

@@ -1,0 +1,45 @@
+@use "../../themes/techno-theme" as techno_theme
+
+$main_color: techno_theme.$first_additional_techno_color
+$secondary_color: techno_theme.$secondary_additional_techno_color
+$header_text_color: techno_theme.$header_techno_text_color
+$secondary_header_color: techno_theme.$main_techno_text_color
+$main_text_color: techno_theme.$main_techno_text_color
+
+.register
+    &-container
+        width: 100%
+        color: #fff
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &-content
+        padding: 15px 20px
+        background-color: desaturate(darken($main_color, 20%), 5%)
+        border-radius: 15px
+        height: fit-content
+        width: 55%
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 15px
+
+    &-header
+        color: desaturate(darken($secondary_color, 5%), 15%)
+        display: flex
+        flex-direction: column
+        gap: 5px
+        align-items: center
+
+        .thunder-item
+            color: yellow
+            font-style: italic
+
+    &-subheader
+        color: lighten($secondary_header_color, 10%)
+
+    &-bottom-link
+        text-align: center
+        color: $main_text_color
